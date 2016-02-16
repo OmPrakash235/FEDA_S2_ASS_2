@@ -1,0 +1,32 @@
+<!--
+1. Write a closure in which outer function with a parameter is used by inner function which
+also has a parameter.
+2. The operation performed by inner function is to return multiplication of both the
+parameters value.
+3. Call this closure function and alert the multiplication produced by the closure.
+-->
+
+<html>
+	<head>
+		<title>Inner Function</title>
+	</head>
+	<body>
+	</body>
+	<script type="text/javascript">
+		function outerMultiply(num1) {
+			var obj = new Object();
+			function innerMultiply(num2) {
+				return num1 * num2;
+			}
+			obj.innerMultiply = innerMultiply;
+			return obj;
+		}
+
+		var num1 = 5;
+		var num2 = 10;
+
+		var obj1 = outerMultiply(num1);
+		
+		alert("Product of " + num1 + " and " + num2 + ": " + obj1.innerMultiply(num2));
+	</script>
+</html>
